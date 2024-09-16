@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cabeçalho</title>
+</head>
+<body>
+<div th:fragment="header">
+    <h1>Conteúdo do Cabeçalho</h1>
+    <span> | </span>
+    <a href="/listaUsuariosTemplate" th:href="@{/listaUsuariosTemplate}">Lista de Usuarios</a>
+    <span> | </span>
+    <a href="/cadastroUsuario" th:href="@{/cadastroUsuario}">Cadastrar Usuario</a>
+    <span> | </span>
+    <a href="/listaAnunciosTemplate" th:href="@{/listaAnunciosTemplate}">Lista de Anuncios</a>
+    <span> | </span>
+    <a href="/cadastroAnuncio" th:href="@{/cadastroAnuncio}">Cadastrar Anuncio</a>
+    <hr />
+    <span> | </span>
+    <a href="/listaCampanhasTemplate" th:href="@{/listaCampanhasTemplate}">Lista de campanhas</a>
+    <span> | </span>
+    <a href="/cadastroCampanha" th:href="@{/cadastroCampanha}">Cadastrar Campanha</a>
+    <hr />
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="pt-BR"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Anuncios</title>
+</head>
+<body>
+<div th:fragment="listaAnuncios">
+  <h2>Lista de Anuncios Cadastrados</h2>
+  <br/>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titulo</th>
+      <th>Texto Anuncio</th>
+      <th>URL Anuncio</th>
+      <th>Tipo Anuncio</th>
+      <th>Data Criação</th>
+      <th>Impressoes</th>
+      <th>Quantidade de Cliques</th>
+      <th>Custo do anuncio</th>
+      <th>Usuario</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="anuncio : ${listaAnuncios}">
+      <td th:text="${anuncio.getIdAnuncio()}">ID</td>
+      <td th:text="${anuncio.getTitulo()}">Titulo</td>
+      <td th:text="${anuncio.getTextoAnuncio()}">Texto do Anuncio</td>
+      <td th:text="${anuncio.getUrlAnuncio()}"> URL do Anuncio</td>
+      <td th:text="${anuncio.getDataCriacao()}">Data de criação</td>
+      <td th:text="${anuncio.getImpressoes()}">Impressoes</td>
+      <td th:text="${anuncio.getQtdCliques()}">Quantidade de cliques</td>
+      <td th:text="${anuncio.getCustoAnuncio()}">Custo do anuncio</td>
+      <td th:text="${anuncio.getUsuario().getNome()}">Usuario</td>
+      <td>
+        <a th:href="@{/editaAnuncio/{idAnuncio}(idAnuncio = ${anuncio.idAnuncio})}">Editar</a>
+        <span> | </span>
+        <a th:href="@{/deletarAnuncio/{idAnuncio}(idAnuncio = ${anuncio.idAnuncio})}">Excluir</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

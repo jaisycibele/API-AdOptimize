@@ -1,0 +1,46 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="pt-BR"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Campanhas</title>
+</head>
+<body>
+<div th:fragment="listaCampanhas">
+    <h2>Lista de Campanhas Cadastrados</h2>
+    <br/>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome da Campanha</th>
+            <th>Orçamento</th>
+            <th>Data de Inicio</th>
+            <th>Data de Termino</th>
+            <th>Status</th>
+            <th>Tipo de Campanha</th>
+            <th>Anuncio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="campanha : ${listaCampanhas}">
+            <td th:text="${campanha.getIdCampanha()}">ID</td>
+            <td th:text="${campanha.getNomeCampanha()}">Nome da campanha</td>
+            <td th:text="${campanha.getOrcamento()}">Orçamento</td>
+            <td th:text="${campanha.getDataInicio()}"> Data de Inicio</td>
+            <td th:text="${campanha.getDataTermino()}">Data de Termino</td>
+            <td th:text="${campanha.getStatus()}">Status</td>
+            <td th:text="${campanha.getTipoCampanha()}">Tipo de campanha</td>
+            <td th:text="${campanha.getAnuncio().getTitulo}">Anuncio</td>
+            <td>
+                <a th:href="@{/editaCampanha/{idCampanha}(idCampanha = ${campanha.idCampanha})}">Editar</a>
+                <span> | </span>
+                <a th:href="@{/deletarCampanha/{idCampanha}(idCampanha = ${campanha.idCampanha})}">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

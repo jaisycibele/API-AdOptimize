@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="pt-BR"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Campanhas</title>
+</head>
+<body>
+<div th:fragment="formEdicao">
+  <form method="post" th:action="@{/atualizarCampanha/{idCampanha}(idCampanha = ${idCampanha})}" th:object="${campanhaRequest}">
+    <h2>Edição de Campanha</h2>
+    <input type="hidden" th:field="${idCampanha}">
+    <br/>
+    <table>
+      <tr>
+        <td>Nome da campanha:</td>
+        <td><input type="text" size="50" th:field="*{nomeCampanha}"></td>
+      </tr>
+      <tr>
+        <td>Orçamento:</td>
+        <td><input type="text" size="20" th:field="*{orcamento}"></td>
+      </tr>
+      <tr>
+        <td>Data de inicio:</td>
+        <td><input type="text" size="50" th:field="*{dataInicio}"></td>
+      </tr>
+      <tr>
+        <td>Data de termino:</td>
+        <td><input type="text" size="50" th:field="*{dataTermino}"></td>
+      </tr>
+      <tr>
+        <td>Status:</td>
+        <td><input type="text" size="50" th:field="*{status}"></td>
+      </tr>
+      <tr>
+        <td>Tipo de campanha:</td>
+        <td><input type="text" size="50" th:field="*{tipoCampanha}"></td>
+      </tr>
+      <tr>
+        <td>Anuncio</td>
+        <td><input type="text" size="50" th:field="*{anuncio}"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Gravar"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>
