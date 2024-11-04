@@ -38,6 +38,8 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST, "/anuncio").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/campanha/{id}").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/anuncio/{id}").hasRole("USER")
+                        .requestMatchers(HttpMethod.GET, "/springai/generate").permitAll()
+
 
                         .requestMatchers("/**").hasRole("ADMIN")
 
