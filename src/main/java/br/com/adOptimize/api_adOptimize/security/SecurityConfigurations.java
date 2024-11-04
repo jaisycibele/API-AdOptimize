@@ -34,7 +34,13 @@ public class SecurityConfigurations {
                         // libera o POST de /auth/register para todos
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         // restringe a criação (POST) de usuarios apenas a usuários ADMIN
-                        .requestMatchers(HttpMethod.POST, "/usuario").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/campanha").hasRole("USER")
+                        .requestMatchers(HttpMethod.POST, "/anuncio").hasRole("USER")
+                        .requestMatchers(HttpMethod.GET, "/campanha/{id}").hasRole("USER")
+                        .requestMatchers(HttpMethod.GET, "/anuncio/{id}").hasRole("USER")
+
+                        .requestMatchers("/**").hasRole("ADMIN")
+
                         // libera todos os outros métodos da API para qualquer usuário AUTENTICADO
                         .anyRequest().authenticated()
                 )
