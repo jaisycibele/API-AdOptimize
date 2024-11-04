@@ -54,6 +54,10 @@ GET http://localhost:8080/springai/generate
   "ollama": "Que dia é hoje?"
 }
 
+#ou
+
+#http://localhost:8080/springai/generate?message=Sua pergunta aqui
+
 ## URL:
 
 Usuário:
