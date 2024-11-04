@@ -14,11 +14,49 @@
 
 ## Link para o vídeo mostrando a aplicação
 
-[https://www.youtube.com/watch?v=xVgYOcJJJFU](https://www.youtube.com/watch?v=dHObUFK_rz8)
+https://youtu.be/rZ0nhocs8ZQ?si=Kw6MoIUtsllKLQXv
 
 ## Como rodar a aplicação:
 - Ao clonar o projeto, ir em "Project Structure" > SDK = graalvm-ce > Language level = SDK default
 - Ir em Settings > build tools > Gradle > Gradle JVM = graalvm-ce
+
+## Spring Security
+
+Para fazer as requisições, o usuário deve estar autenticado.
+
+POST http://localhost:8080/auth/login
+POST http://localhost:8080/auth/register
+
+Exemplos requisição:
+
+Register
+{
+    "login" : "jaisy",
+    "senha" : "123456710",
+    "role" : "ADMIN"
+}
+
+{
+    "login" : "joao",
+    "senha" : "12345678",
+    "role" : "USER"
+}
+
+O "USER" possui limitações.
+
+## SPRING AI
+
+# Requisição para teste:
+
+GET http://localhost:8080/springai/generate
+
+{
+  "ollama": "Que dia é hoje?"
+}
+
+#ou
+
+#http://localhost:8080/springai/generate?message=Sua pergunta aqui
 
 ## URL:
 
