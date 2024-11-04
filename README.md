@@ -14,7 +14,7 @@
 
 ## Link para o vídeo mostrando a aplicação
 
-[https://www.youtube.com/watch?v=xVgYOcJJJFU](https://www.youtube.com/watch?v=dHObUFK_rz8)
+https://youtu.be/rZ0nhocs8ZQ?si=Kw6MoIUtsllKLQXv
 
 ## Como rodar a aplicação:
 - Ao clonar o projeto, ir em "Project Structure" > SDK = graalvm-ce > Language level = SDK default
